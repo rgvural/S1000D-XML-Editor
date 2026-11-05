@@ -12,9 +12,6 @@ The installer is unsigned; on first launch Windows SmartScreen may show a
 warning ("More info" → "Run anyway"). You can verify the downloaded file's
 integrity against the `.sha256` file on the release page.
 
-**[📖 User guide (English)](user-manual.md)** — also built into the app itself
-(Help → User Guide).
-
 ## Features
 
 - Visual (WYSIWYG) and XML source editing
@@ -24,5 +21,7 @@ integrity against the `.sha256` file on the release page.
 - IPD data entry and bulk (BOM) import
 
 ## Contact
+
+Feel to contact inquiries about web edition and source code sales.
 
 Rahmi Gökhan VURAL — rgokhanvural@outlook.com
