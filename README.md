@@ -1,25 +1,25 @@
 # S1000D Editor
 
-S1000D veri modülü (data module) XML dosyalarını düzenleyen, canlı önizleme sunan
-ve PDF döküman üreten Windows masaüstü uygulaması. S1000D Issue 4.1, 5.0, 6 ve 7
-şema paketlerini destekler.
+A Windows desktop application for editing S1000D data module XML files, with
+live preview and PDF export. Supports S1000D Issue 4.1, 5.0, 6 and 7 schema
+packages.
 
-## İndirme
+## Download
 
-**[⬇️ Son sürümü indir (Windows x64)](../../releases/latest)**
+**[⬇️ Download the latest release (Windows x64)](../../releases/latest)**
 
-Kurulum paketi imzasızdır; ilk açılışta Windows SmartScreen bir uyarı gösterebilir
-("Ek bilgi" → "Yine de çalıştır"). İndirdiğiniz dosyanın bütünlüğünü release
-sayfasındaki `.sha256` dosyasıyla doğrulayabilirsiniz.
+The installer is unsigned; on first launch Windows SmartScreen may show a
+warning ("More info" → "Run anyway"). You can verify the downloaded file's
+integrity against the `.sha256` file on the release page.
 
-## Özellikler
+## Features
 
-- Görsel (WYSIWYG) ve XML kaynak düzenleme
-- XSD şema doğrulama ve BREX kural denetimi
-- Canlı önizleme ve PDF dışa aktarma
-- Yeni proje / yeni modül sihirbazları
-- IPD veri girişi ve toplu (BOM) içe aktarma
+- Visual (WYSIWYG) and XML source editing
+- XSD schema validation and BREX rule checking
+- Live preview and PDF export
+- New project / new module wizards
+- IPD data entry and bulk (BOM) import
 
-## İletişim
+## Contact
 
 Rahmi Gökhan VURAL — rgokhanvural@outlook.com
