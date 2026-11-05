@@ -20,7 +20,7 @@ Set up a project from nothing, edit S1000D data modules visually, validate them 
   - [Differences from the desktop](#differences-from-the-desktop)
 - [Interface](#interface)
 - [The ribbon and command search](#the-ribbon-and-command-search)
-  - [Command search — `⌘K` / `Ctrl+K`](#command-search--k--ctrlk)
+  - [Command search — `Ctrl+K`](#command-search--ctrlk)
 - [Documenting a new system](#documenting-a-new-system)
 - [Opening and saving files](#opening-and-saving-files)
 - [Visual (WYSIWYG) editing](#visual-wysiwyg-editing)
@@ -59,7 +59,6 @@ Set up a project from nothing, edit S1000D data modules visually, validate them 
 
 | Platform | Package | Note |
 |----|----|----|
-| macOS (Apple Silicon) | `S1000D Editor-0.45.4-arm64.dmg` | Unsigned package: on first launch **right-click → Open** |
 | Windows (x64) | `S1000D Editor Setup 0.45.4.exe` | Setup wizard; the directory can be chosen |
 
 ### Running from source
@@ -67,7 +66,6 @@ Set up a project from nothing, edit S1000D data modules visually, validate them 
     npm install
     npm run dev        # development (live reload)
     npm start          # build + run
-    npm run dist       # build the macOS .dmg
     npm run dist:win   # build the Windows installer .exe
 
 If several authors will work on one data set, install the [web edition](#web) rather than the desktop package.
@@ -97,7 +95,7 @@ The desktop edition assumes a single user: the files are mine, the open module i
 
 If the server stops unexpectedly, a supervisor script restarts it after five seconds. After changing settings choose *Restart the server*; if you changed the port, run the *Firewall rule* shortcut as well.
 
-**Running from source** (development, or a Linux/macOS server):
+**Running from source** (development, or a Linux server):
 
     npm install
     npm run build      # browser bundle
@@ -199,7 +197,7 @@ A new project starts empty. To bring in a CSDB prepared elsewhere — produced i
 | Route | When |
 |----|----|
 | **Choose files…** | When you have individual files — several modules and graphics can be selected at once |
-| **Choose a ZIP archive…** | For a whole folder. Zip it and hand it over; sub-folders are flattened and the `__MACOSX` and `.DS_Store` leftovers macOS adds are discarded |
+| **Choose a ZIP archive…** | For a whole folder. Zip it and hand it over; sub-folders are flattened and `__MACOSX`/`.DS_Store` leftovers are discarded |
 
 The file types accepted: **data modules** (`.xml`), **ICN graphics** (png, jpg, gif, svg, cgm, and audio/video) and **project settings files** (`s1000d-style.json`, `s1000d-profile.json`, `s1000d-tm.json`). Anything else is listed as “unsupported” and skipped.
 
@@ -281,7 +279,7 @@ The state of the file before every save is kept. The module's **History** link o
 | Adding a figure | A file on disk is chosen | Uploaded from your machine and copied into the project |
 | PDF | A save dialog | Produced on the server and downloaded; if the server has no browser, your own browser's print dialog opens (choose **Save as PDF**) |
 | Machine translation | Embedded offline model | **Not present** — the translation memory and human translation work; the model is deliberately kept off a shared server |
-| Application menu | Yes (macOS) | No; the shortcuts (`⌘O`, `⌘S`, `⌘P`, `⌘K`, `F1`) are the same |
+| Application menu | No (the ribbon is the command surface) | No; the shortcuts (`Ctrl+O`, `Ctrl+S`, `Ctrl+P`, `Ctrl+K`, `F1`) are the same |
 | The guide | A separate window | A new tab |
 
 ## Interface
@@ -290,7 +288,7 @@ The state of the file before every save is kept. The module's **History** link o
 
 The structure bar gains buttons according to the document type: in an IPD, ＋ Part row / ⇪ Import BOM; in a BREX module, ⚖ BREX rules.
 
-> **Reaching this guide:** the **? Help** button on the **View** tab, or the **Help → User Guide** menu (`⌘?` / `F1`). The guide is embedded in the application; no internet is needed. File operations also have shortcuts: `⌘O` open, `⌘S` save, `⌘P` PDF.
+> **Reaching this guide:** the **? Help** button on the **View** tab, or the **Help → User Guide** menu (`F1`). The guide is embedded in the application; no internet is needed. File operations also have shortcuts: `Ctrl+O` open, `Ctrl+S` save, `Ctrl+P` PDF.
 
 - **Files** — every XML in the open module's directory; one click to switch.
 - **Document Map** — the document's element tree. Click a node and that block is selected in the preview and scrolled into view. Right-click for *Change…* (edit the attributes and, if it has no child elements, the text) and *Delete* (after confirmation, removes the element with its subtree; the root element cannot be deleted). Both can be undone.
@@ -324,7 +322,7 @@ Commands are divided into tabs by subject. Click a tab and only that group's com
 
 The **sidebar** is closed and opened with the `‹` to the right of its tabs, the thin strip on the left, or **View → Sidebar**.
 
-### Command search — `⌘K` / `Ctrl+K`
+### Command search — `Ctrl+K`
 
 If you do not know which tab a command is on, search for it. The tab name is printed to the left of each result, so next time you can go straight there.
 
@@ -427,7 +425,7 @@ The application opens in **Visual** mode: you see the document laid out as print
 ### Editing text
 
 - Paragraph, title, table cell, figure caption, warning text… **click and type**.
-- `⌘/Ctrl B` bold → `emphasis`, `⌘/Ctrl I` italic → `em02`, `⌘/Ctrl U` underline → `em03`; subscript and superscript are preserved.
+- `Ctrl+B` bold → `emphasis`, `Ctrl+I` italic → `em02`, `Ctrl+U` underline → `em03`; subscript and superscript are preserved.
 - `Enter` inside a paragraph starts a new one (a warning paragraph in a warning, a step paragraph in a step). In title fields it finishes editing.
 
 ### Adding a figure
@@ -440,7 +438,7 @@ The application opens in **Visual** mode: you see the document laid out as print
 
 ### Text formatting
 
-The **B / I / U / X₂ / X²** buttons on the toolbar (or `⌘B` `⌘I` `⌘U`) turn the selection into S1000D's semantic elements: `emphasis`, `emphasis em02`, `emphasis em03`, `subScript`, `superScript`.
+The **B / I / U / X₂ / X²** buttons on the toolbar (or `Ctrl+B` `Ctrl+I` `Ctrl+U`) turn the selection into S1000D's semantic elements: `emphasis`, `emphasis em02`, `emphasis em03`, `subScript`, `superScript`.
 
 > **Why is there no font or type size?** S1000D is a **semantic** markup language: the content says “this is emphasised”, not “this is 12pt Arial”. There is no font attribute in the schema. Typography is decided by the style definition at publication time — so the same data module can print consistently in different publications and under different customers' house styles. If you want to change the appearance, the right place is the publication style, not the inside of the document.
 
@@ -699,8 +697,8 @@ Unrecognised elements are processed with their content preserved; partially supp
 | Columns are empty in a BOM import | Pick Part number and Description by hand in the column mapping menus; those two are required. |
 | An `[ICN-…]` box where a graphic should be | The file is not in the module's directory, or its format is unsupported — put the ICN file in the same folder as the XML. |
 | “Publication: N data modules, M missing” | Some DM files the PM points to are not in the directory; the red lines in Contents show which. |
-| macOS “unidentified developer” warning | The package is unsigned: right-click the application and choose **Open**. |
-| Something was deleted or broken in Visual mode | **↩ Undo** reverses the last operations; `⌘/Ctrl Z` works in XML mode too. Nothing changes on disk until you save. |
+| Windows SmartScreen warning | The package is unsigned: click **More info** → **Run anyway**. |
+| Something was deleted or broken in Visual mode | **↩ Undo** reverses the last operations; `Ctrl+Z` works in XML mode too. Nothing changes on disk until you save. |
 | Auto-translate does nothing | The panel shows the engine's own error in a red line. Copy that text — it names the cause. |
 
 ## Release history
