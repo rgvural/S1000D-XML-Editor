@@ -22,6 +22,6 @@ integrity against the `.sha256` file on the release page.
 
 ## Contact
 
-Feel to contact inquiries about web edition and source code sales.
+Feel free to contact inquiries about web edition and source code sales.
 
 Rahmi Gökhan VURAL — rgokhanvural@outlook.com
