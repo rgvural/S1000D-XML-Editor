@@ -12,6 +12,9 @@ The installer is unsigned; on first launch Windows SmartScreen may show a
 warning ("More info" → "Run anyway"). You can verify the downloaded file's
 integrity against the `.sha256` file on the release page.
 
+**[📖 User guide (English)](guide-en.html)** — also built into the app itself
+(Help → User Guide).
+
 ## Features
 
 - Visual (WYSIWYG) and XML source editing
